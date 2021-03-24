@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox reminder</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>    <!-- Here we use 'defer' instead of putting script at the end -->
+</head>
+
+<body>
+    <header>
+        <h1>Flexbox reminder</h1>
+    </header>
+
+    <!-- Container properties -------------------------------------------------------------------------- -->
+    <h2 id="containerPropertiesTitle">Container properties</h2>
+
+    <div class="concept A">
+        <h3>Flex-direction</h3>
+        <div class="btn-container A">
+            <button class="button" onclick="flexDir('row')">Row (default)</button>
+            <button class="button" onclick="flexDir('row-reverse')">Row-reverse</button>
+            <button class="button" onclick="flexDir('column')">Column</button>
+            <button class="button" onclick="flexDir('column-reverse')">Column-reverse</button>
+        </div>
+        <div id="flex-direction-container" class="container A">
+            <div class="item A">1</div>
+            <div class="item A">2</div>
+            <div class="item A">3</div>
+            <div class="item A">4</div>
+            <div class="item A">5</div>
+        </div>
+    </div>
+
+    <div class="concept A">
+        <h3>Justify-content</h3>
+        <div class="btn-container A">
+            <button class="button" onclick="justifyContent('flex-start')">Flex-start (default)</button>
+            <button class="button" onclick="justifyContent('flex-end')">Flex-end</button>
+            <button class="button" onclick="justifyContent('center')">Center</button>
+            <button class="button" onclick="justifyContent('space-between')">Space-between</button>
+            <button class="button" onclick="justifyContent('space-around')">Space-around</button>
+            <button class="button" onclick="justifyContent('space-evenly')">Space-evenly</button>
+        </div>
+        <div id="justify-content-container" class="container A">
+            <div class="item A">1</div>
+            <div class="item A">2</div>
+            <div class="item A">3</div>
+            <div class="item A">4</div>
+            <div class="item A">5</div>
+        </div>
+    </div>
+
+    <div class="concept A">
+        <h3>Align-items (need container height)</h3>
+        <div class="btn-container A">
+            <button class="button" onclick="alignItems('stretch')">Stretch (default)</button>
+            <button class="button" onclick="alignItems('flex-start')">Flex-start</button>
+            <button class="button" onclick="alignItems('flex-end')">Flex-end</button>
+            <button class="button" onclick="alignItems('center')">Center</button>
+            <button class="button" onclick="alignItems('baseline')">Baseline</button>
+        </div>
+        <div id="align-items-container" class="container A">
+            <div class="item A">1</div>
+            <div class="item A">2</div>
+            <div class="item A">3</div>
+            <div class="item A">4</div>
+            <div class="item A">5</div>
+        </div>
+    </div>
+
+    <div class="concept A">
+        <h3>Align-content (need container height)</h3>
+        <div class="btn-container A">
+            <button class="button" onclick="alignContent('stretch')">Stretch (default)</button>
+            <button class="button" onclick="alignContent('flex-start')">Flex-start</button>
+            <button class="button" onclick="alignContent('flex-end')">Flex-end</button>
+            <button class="button" onclick="alignContent('center')">Center</button>
+            <button class="button" onclick="alignContent('space-between')">Space-between</button>
+            <button class="button" onclick="alignContent('space-around')">Space-around</button>
+        </div>
+        <div id="align-content-container" class="container A">
+            <div class="item A">1</div>
+            <div class="item A">2</div>
+            <div class="item A">3</div>
+            <div class="item A">4</div>
+            <div class="item A">5</div>
+            <div class="item A">6</div>
+            <div class="item A">7</div>
+            <div class="item A">8</div>
+            <div class="item A">9</div>
+            <div class="item A">10</div>
+            <div class="item A">11</div>
+            <div class="item A">12</div>
+            <div class="item A">13</div>
+            <div class="item A">14</div>
+            <div class="item A">15</div>
+        </div>
+    </div>
+
+    <div class="concept A">
+        <h3>Flex-wrap (and width options)</h3>
+        <div class="btn-container A">
+            <button class="button" onclick="flexWrap('nowrap')">Nowrap (default)</button>
+            <button class="button" onclick="flexWrap('wrap')">Wrap</button>
+            <button class="button" onclick="flexWrap('wrap-reverse')">Wrap-reverse</button>
+            <div class="wrap-resize-options">
+                <label for="itemSize">Item width (2 - 15rem)</label>
+                <input type="range" id="itemSize" name="itemSize" min="2" value="4" max="15" step="0.5" onchange="itemSize(this.value)">
+            </div>
+            <div class="wrap-resize-options">
+                <label for="wrapContainer">Container width (10 - 90%)</label>
+                <input type="range" id="wrapContainerWidth" name="wrapContainer" min="10" value="90" max="90" step="5" onchange="containerWidth(this.value)">
+            </div>
+        </div>
+        <div id="flex-wrap-container" class="container A">
+            <div class="item A fw">1</div>
+            <div class="item A fw">2</div>
+            <div class="item A fw">3</div>
+            <div class="item A fw">4</div>
+            <div class="item A fw">5</div>
+            <div class="item A fw">6</div>
+            <div class="item A fw">7</div>
+            <div class="item A fw">8</div>
+            <div class="item A fw">9</div>
+            <div class="item A fw">10</div>
+            <div class="item A fw">11</div>
+            <div class="item A fw">12</div>
+            <div class="item A fw">13</div>
+            <div class="item A fw">14</div>
+            <div class="item A fw">15</div>
+        </div>
+    </div>
+
+    <!-- MULTI FLEX start -->
+    <div class="concept A multiflex">
+        <h3>Multi flex: combine all container properties</h3>
+        <div id="flex-options-container" class="btn-container A">
+            <div class="select-container">
+                <label for="flexDir"><h4>Flex direction</h4></label>
+                <select name="flexDir" id="flexDir" onchange="multiFlexDir(this.value)">
+                    <option value="row">Row</option>
+                    <option value="row-reverse">Row-reverse</option>
+                    <option value="column">Column</option>
+                    <option value="column-reverse">Column-reverse</option>
+                </select>
+            </div>
+
+            <div class="select-container">
+                <label for="justifyCont"><h4>Justify content</h4></label>
+                <select name="justifyCont" id="justifyCont" onchange="multiJustifyContent(this.value)">
+                    <option value="flex-start">Flex-start</option>
+                    <option value="flex-end">Flex-end</option>
+                    <option value="center">Center</option>
+                    <option value="space-between">Space-between</option>
+                    <option value="space-around">Space-around</option>
+                    <option value="space-evenly">Space-evenly</option>
+                </select>
+            </div>
+
+            <div class="select-container">
+                <label for="alignItm"><h4>Align items</h4></label>
+                <select name="alignItm" id="alignItm" onchange="multiAlignItems(this.value)">
+                    <option value="stretch">Stretch</option> 
+                    <option value="flex-start">Flex-start</option> 
+                    <option value="flex-end">Flex-end</option> 
+                    <option value="center">Center</option> 
+                    <option value="baseline">Baseline</option> 
+                </select>
+            </div>
+
+            <div class="select-container">
+                <label for="alignCont"><h4>Align content</h4></label>
+                <select name="alignCont" id="alignCont" onchange="multiAlignContent(this.value)">
+                    <option value="stretch">Stretch</option>
+                    <option value="flex-start">Flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">Center</option>
+                    <option value="space-between">Space-between</option>
+                    <option value="space-around">Space-around</option>
+                </select>
+            </div>
+
+            <div class="select-container">  <!-- TODO: add option overflow hidden/visible -->
+                <label for="flexWrp"><h4>Flex-wrap</h4></label>
+                <select name="flexWrp" id="flexWrp" onchange="multiFlexWrap(this.value)">
+                    <option value="nowrap">Nowrap</option>
+                    <option value="wrap">Wrap</option>
+                    <option value="wrap-reverse">Wrap-reverse</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="size-options-container" class="btn-container A">
+            <div class="resize-option-container">
+                <label for="itemQuantity">Item quantity (2 - 20)</label>
+                <input type="range" id="itemQuantity" name="itemQuantity" min="2" value="5" max="20" step="1" onchange="multiItemQuantity(this.value)">
+            </div>
+            <div class="resize-option-container">
+                <label for="itemWidth">Item width (2 - 30rem)</label>
+                <input type="range" id="itemWidth" name="itemWidth" min="2" value="4" max="30" step="0.5" onchange="multiItemWidth(this.value)">
+            </div>
+            <div class="resize-option-container">
+                <label for="itemHeight">Item height (2 - 30rem)</label>
+                <input type="range" id="itemHeight" name="itemHeight" min="2" value="4" max="30" step="0.5" onchange="multiItemHeight(this.value)">
+            </div>
+            <div class="resize-option-container">
+                <label for="containerWidth">Container width (10 - 100vw)</label>
+                <input type="range" id="containerWidth" name="containerWidth" min="10" value="50" max="100" step="5" onchange="multiContainerWidth(this.value)">
+            </div>
+            <div class="resize-option-container">
+                <label for="containerHeight">Container height (10 - 100vh)</label>
+                <input type="range" id="containerHeight" name="containerHeight" min="10" value="10" max="100" step="5" onchange="multiContainerHeight(this.value)">
+            </div>
+        </div>
+
+        <div id="multiflex-container" class="container A">
+            <div class="multiflexitem">1</div>
+            <div class="multiflexitem">2</div>
+            <div class="multiflexitem">3</div>
+            <div class="multiflexitem">4</div>
+            <div class="multiflexitem">5</div>
+        </div>
+    </div>
+    <!-- MULTI FLEX end -->
+
+    <!-- Content properties --------------------------------------------------------------------------------- -->
+    <h2 id="contentPropertiesTitle">Content properties</h2>
+
+    <div class="concept B">
+        <h3>Align-self (for item 3)</h3>
+        <div class="btn-container B">
+            <button class="button" onclick="alignSelf('auto')">Auto (default)</button>
+            <button class="button" onclick="alignSelf('flex-start')">Flex-start</button>
+            <button class="button" onclick="alignSelf('flex-end')">Flex-end</button>
+            <button class="button" onclick="alignSelf('center')">Center</button>
+            <button class="button" onclick="alignSelf('baseline')">Baseline</button>
+            <button class="button" onclick="alignSelf('stretch')">Stretch</button>
+        </div>
+        <div id="align-self-container" class="container B">
+            <div class="item B">1</div>
+            <div class="item B">2</div>
+            <div class="item B" id="align_self_item3">3</div>
+            <div class="item B">4</div>
+            <div class="item B">5</div>
+        </div>
+    </div>
+
+    <div class="concept B">
+        <h3>Flex-grow (0 by default)</h3>
+        <div class="btn-container B">
+            <div class="content-option">
+                <label>Item 1</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexGrow1(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 2</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexGrow2(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 3</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexGrow3(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 4</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexGrow4(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 5</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexGrow5(this.value)"/>
+            </div>
+        </div>
+        <div id="flex-grow-container" class="container B">
+            <div class="item B" id="flex-grow-item1">1</div>
+            <div class="item B" id="flex-grow-item2">2</div>
+            <div class="item B" id="flex-grow-item3">3</div>
+            <div class="item B" id="flex-grow-item4">4</div>
+            <div class="item B" id="flex-grow-item5">5</div>
+        </div>
+    </div>
+
+    <div class="concept B">
+        <h3>Flex-shrink (1 by default)</h3>
+        <div class="btn-container B">
+            <div class="content-option">
+                <label>Item 1</label> 
+                <input class="" type="number" min="0" value="1" max="19" onchange="flexShrink1(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 2</label> 
+                <input class="" type="number" min="0" value="1" max="19" onchange="flexShrink2(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 3</label> 
+                <input class="" type="number" min="0" value="1" max="19" onchange="flexShrink3(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 4</label> 
+                <input class="" type="number" min="0" value="1" max="19" onchange="flexShrink4(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 5</label> 
+                <input class="" type="number" min="0" value="1" max="19" onchange="flexShrink5(this.value)"/>
+            </div>
+        </div>
+        <div id="flex-shrink-container" class="container B">
+            <div class="item B" id="flex-shrink-item1">1</div>
+            <div class="item B" id="flex-shrink-item2">2</div>
+            <div class="item B" id="flex-shrink-item3">3</div>
+            <div class="item B" id="flex-shrink-item4">4</div>
+            <div class="item B" id="flex-shrink-item5">5</div>
+        </div>
+    </div>
+
+    <div class="concept B">
+        <h3>Order (0 by default)</h3>
+        <div class="btn-container B">
+            <div class="content-option">
+                <label>Item 1</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexOrder1(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 2</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexOrder2(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 3</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexOrder3(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 4</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexOrder4(this.value)"/>
+            </div>
+            <div class="content-option">
+			    <label>Item 5</label> 
+                <input class="" type="number" min="0" value="0" max="19" onchange="flexOrder5(this.value)"/>
+            </div>
+        </div>
+        <div id="order-container" class="container B">
+            <div class="item B" id="flex-order-item1">1</div>
+            <div class="item B" id="flex-order-item2">2</div>
+            <div class="item B" id="flex-order-item3">3</div>
+            <div class="item B" id="flex-order-item4">4</div>
+            <div class="item B" id="flex-order-item5">5</div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="mailto:paternmalle@gmail.com" class="footer_link">paternmalle@gmail.com</a>
+    </footer>
+</body>
+</html>

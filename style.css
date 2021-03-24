@@ -1,0 +1,373 @@
+/* =========================================================================================
+    Summary
+============================================================================================ 
+    General styling
+
+    Header
+
+    Container properties:
+        Flex-direction
+        Justify-content
+        Align-items
+        Align-content
+        Flex-wrap
+
+    MULTI FLEX
+
+    Content properties:
+        Align-self
+        Flex-grow
+        Flex-shrink
+        Order
+
+    Footer
+*/
+
+/* TODO: refactor */
+
+/* ==============================================================
+    General styling
+============================================================== */   
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: white;
+    width: 100vw;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    padding: 3rem 4rem;
+}
+#containerPropertiesTitle /* h2 */{
+    color: #4097aa;
+    -webkit-text-stroke: 1px #247486;
+}
+#contentPropertiesTitle /* h2 */{
+    color: #fa9483;
+    -webkit-text-stroke: 1px #ce523c;
+}
+h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    padding: 1rem 1rem;
+    color: rgb(0, 0, 0);
+}
+
+.concept {
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem 1rem 1rem 1rem;
+}
+.concept.A {
+    border-left: 2px solid #2d7a8b;
+}
+.concept.B {
+    border-left: 2px solid #c86554;
+}
+
+.container {
+    display: flex;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 1px black;
+}
+.container.A {
+    border: 1px solid #2d7a8b;
+}
+.container.B {
+    border: 1px solid #c86554;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px 1px black;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+.item.A {
+    background: linear-gradient(140deg, #2d7a8b 0%, #4097aa 100%);
+    border: 1px solid #2d7a8b;
+}
+.item.B {
+    background: linear-gradient(140deg, #c86554 0%, #fa9483 100%);
+    border: 1px solid #c86554;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+.button {
+    box-shadow: 3px 3px 5px 2px black;
+    padding: 0.5em 1.5em;
+    margin: 1rem;
+    border-radius: 4px;
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.button:active {
+    transform: translateY(3px);
+    box-shadow: 1px 1px 1px 2px black;
+}
+.button:focus {
+    outline: none;
+    background: rgb(46, 46, 46);
+    color: white;
+}
+
+/* ==============================================================
+    Header
+============================================================== */
+header {
+    height: 10rem;
+    background: #2a4046;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+h1 {
+    font-size: 4rem;
+}
+
+
+/* ==============================================================
+    Container properties
+============================================================== */
+
+/* Flex direction */
+#flex-direction-container {
+    min-height: 15vh;
+}
+#flex-direction-container > .item {
+    width: 10%;
+}
+
+/* Justify content */
+#justify-content-container {
+    height: 15vh;
+}
+#justify-content-container > .item {
+    width: 10%;
+}
+
+/* Align items */
+#align-items-container {
+    height: 20vh;
+}
+#align-items-container > .item {
+    width: 10%;
+}
+
+/* Align content */
+#align-content-container {
+    flex-wrap: wrap;
+    height: 30vh;
+}
+#align-content-container > .item {
+    width: 15%;
+}
+
+/* Flex wrap */
+#flex-wrap-container {
+    min-height: 10vh;
+}
+#flex-wrap-container > .item {
+    height: 4rem;
+    width: 4rem;
+}
+.wrap-resize-options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 15rem;
+}
+
+/* ==============================================
+    MULTI FLEX
+=============================================== */
+.multiflex {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+#flex-options-container {
+    outline-offset: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.select-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    width: 15rem;
+    height: 4.5rem;
+}
+
+#size-options-container {
+    outline-offset: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.resize-option-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 15rem;
+    height: 4.5rem;
+}
+
+#multiflex-container {
+    display: flex;
+    background-color: white;
+    margin: 1em;
+    padding: 0.5em;
+    overflow: hidden;   /* TODO: Maybe add this as an option */
+}
+.multiflexitem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem;
+    padding: 0.5rem;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 1.3rem;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px 1px black;
+    background: linear-gradient(140deg, #2d7a8b 0%, #4097aa 100%);
+    font-weight: 700;
+}
+
+
+/* ==============================================================
+    Content properties
+============================================================== */
+
+.content-option {
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 8rem;
+    height: 4rem;
+}
+
+/* Align self */
+#align-self-container {
+    height: 20vh;
+    align-items: center;
+}
+#align-self-container > .item {
+    width: 20%;
+}
+
+/* Flex grow */
+#flex-grow-container {
+    height: 10vh;
+}
+#flex-grow-container > .item {
+    flex-grow: 0;
+}
+
+/* Flex shrink */
+#flex-shrink-container {
+    height: 10vh;
+}
+#flex-shrink-container > .item {
+    flex-shrink: 1;
+    width: 400px;   /* Total width must be > container width */
+}
+
+/* Order */
+#order-container {
+    height: 10vh;
+}
+#order-container > .item {
+    width: 20%;
+}
+#flex-order-item1 {
+    background: linear-gradient(140deg, rgb(187, 152, 146) 0%, rgb(255, 250, 249) 100%);
+}
+#flex-order-item2 {
+    background: linear-gradient(140deg, rgb(216, 142, 129) 0%, rgb(255, 181, 168) 100%);
+}
+#flex-order-item3 {
+    background: linear-gradient(140deg, rgb(236, 84, 57) 0%, rgb(250, 148, 131) 100%);
+}
+#flex-order-item4 {
+    background: linear-gradient(140deg, rgb(165, 59, 40) 0%, rgb(255, 56, 21) 100%);
+}
+#flex-order-item5 {
+    background: linear-gradient(140deg, rgb(117, 18, 0) 0%, rgb(195, 29, 0) 100%);
+}
+
+
+/* ==============================================================
+    Footer
+============================================================== */
+.footer {
+    height: 15vh;
+    background: #3f2b29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.footer_link {
+    color: rgba(216,230,241,1);
+    text-decoration: none;
+    font-size: 1.8rem;
+    transition: 100ms;
+}
+
+.footer_link:hover, .footer_link:focus  {
+    /* text-decoration: underline; */
+    transition: 100ms;
+    font-size: 1.9rem;
+    opacity: .8;
+}
+
+
+
+
